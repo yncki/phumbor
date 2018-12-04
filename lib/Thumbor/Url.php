@@ -39,9 +39,9 @@ class Url
     {
         if (count($commands) > 0) {
             $commandPath = implode('/', $commands);
-            $imgPath = sprintf('%s/%s', $commandPath, $original);
+            $imgPath = sprintf('%s/%s', $commandPath, rawurlencode($original));
         } else {
-            $imgPath = $original;
+            $imgPath = rawurlencode($original);
         }
 
         $signature = $secret ? self::sign($imgPath, $secret) : 'unsafe';
