@@ -1,9 +1,10 @@
 # Phumbor
 
-A minimal PHP client for generating [Thumbor][thumbor] URLs.
+A minimal PHP client for generating [Thumbor](https://github.com/globocom/thumbor) URLs.
+
+This is a fork of the [original 99designs/phumbor](https://github.com/99designs/phumbor) library.
 
 [![Build Status](https://travis-ci.org/webfactory/phumbor.svg?branch=master)](https://travis-ci.org/webfactory/phumbor)
-
 
 ## Usage
 
@@ -37,22 +38,6 @@ echo $thumbnailUrlFactory
 
 // etc
 ```
-
-
-## Installation
-
-Add `99designs/phumbor` as a dependency in [`composer.json`][composer].
-
-A [Laravel 4 package][laravel-phumbor] and a [Symfony2 Bundle][symfony-bundle] are also available.
-
-
 ## License
 
-MIT; see [`LICENSE`][license]
-
-
- [thumbor]: https://github.com/globocom/thumbor
- [license]: https://github.com/99designs/phumbor/blob/master/LICENSE
- [composer]: https://getcomposer.org/
- [laravel-phumbor]: https://github.com/ceejayoz/laravel-phumbor
- [symfony-bundle]: https://github.com/jbouzekri/PhumborBundle
+MIT; see [`LICENSE`](LICENSE)
