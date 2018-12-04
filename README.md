@@ -2,7 +2,7 @@
 
 A minimal PHP client for generating [Thumbor][thumbor] URLs.
 
-[![Build Status](https://travis-ci.org/99designs/phumbor.png)](https://travis-ci.org/99designs/phumbor)
+[![Build Status](https://travis-ci.org/webfactory/phumbor.svg?branch=master)](https://travis-ci.org/webfactory/phumbor)
 
 
 ## Usage
