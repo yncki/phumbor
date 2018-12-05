@@ -2,7 +2,7 @@
 
 A minimal PHP client for generating [Thumbor](https://github.com/globocom/thumbor) URLs.
 
-This is a fork of the [original 99designs/phumbor](https://github.com/99designs/phumbor) library.
+This repo was forked out of the [original 99designs/phumbor](https://github.com/99designs/phumbor) library after the 1.2.2 release.
 
 [![Build Status](https://travis-ci.org/webfactory/phumbor.svg?branch=master)](https://travis-ci.org/webfactory/phumbor)
 
