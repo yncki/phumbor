@@ -13,6 +13,7 @@ class BuilderTest extends TestCase
             ->fitIn(320, 240)
             ->smartCrop(true)
             ->addFilter('brightness', 42)
+            ->pdf()
             ->build();
 
         $expected = new Url(
@@ -22,7 +23,8 @@ class BuilderTest extends TestCase
             array(
                 'fit-in/320x240',
                 'smart',
-                'filters:brightness(42)'
+                'filters:brightness(42)',
+                'pdf',
             )
         );
 
