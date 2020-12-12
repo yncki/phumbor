@@ -24,7 +24,9 @@ use Thumbor\Url;
  * If you coerce an instance of this class to String, you get the string
  * representation of the URL.
  *
- * See https://github.com/globocom/thumbor/wiki/Usage for all available options.
+ * See https://github.com/globocom/thumbor/wiki/Usage for most available options and below
+ * for additional options for Thumbor community extensions.
+ *
  * @method Builder trim($colourSource = null)
  * @method Builder crop($topLeftX, $topLeftY, $bottomRightX, $bottomRightY)
  * @method Builder fitIn($width, $height)
@@ -34,6 +36,9 @@ use Thumbor\Url;
  * @method Builder smartCrop($smartCrop)
  * @method Builder addFilter($filter, $args, $_ = null)
  * @method Builder metadataOnly($metadataOnly)
+ *
+ * Additional options for Thumbor community extensions:
+ * @method Builder pdf(bool $pdf = true)
  */
 class Builder
 {

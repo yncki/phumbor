@@ -4,10 +4,12 @@ namespace Thumbor\Url;
 
 /**
  * A set of image manipulation commands, roughly mirroring the interface
- * described at https://github.com/globocom/thumbor/wiki/Usage.
+ * described at https://github.com/globocom/thumbor/wiki/Usage plus commands
+ * for community extensions.
  */
 class CommandSet
 {
+    // Orginal Thumbor commands
     private $trim;
     private $crop;
     private $resize;
@@ -16,6 +18,9 @@ class CommandSet
     private $smartCrop = false;
     private $filters = array();
     private $metadataOnly = false;
+
+    // Commands for community extensions
+    private $pdf = false;
 
     /**
      * Trim surrounding space from the thumbnail. The top-left corner of the
@@ -122,6 +127,20 @@ class CommandSet
     }
 
     /**
+     * Specify that the original "image" is in fact a PDF and Thumbor should
+     * generate a preview image of it.
+     *
+     * This requires an extension like https://github.com/intellisense/tc_pdf
+     * on your Thumbor server.
+     *
+     * @param bool $originalSourceIsPDF
+     */
+    public function pdf($originalSourceIsPDF = true)
+    {
+        $this->pdf = $originalSourceIsPDF ? 'pdf' : null;
+    }
+
+    /**
      * Stringify and return commands as an array.
      */
     public function toArray()
@@ -150,6 +169,10 @@ class CommandSet
             $filters = 'filters:' . implode(':', $this->filters);
             $commands []= $filters;
         }
+
+        // Order "pdf comes after all filters" is important,
+        // @see https://github.com/intellisense/tc_pdf#usage
+        $maybeAppend($this->pdf);
 
         return $commands;
     }

@@ -116,4 +116,44 @@ class CommandSetTest extends TestCase
             $commandSet->toArray()
         );
     }
+
+    public function testPdf()
+    {
+        $commandSet = new CommandSet();
+        $commandSet->pdf();
+        $this->assertEquals(
+            array('pdf'),
+            $commandSet->toArray()
+        );
+    }
+
+    public function testPdfCanBeDeactivated()
+    {
+        $commandSet = new CommandSet();
+        $commandSet->pdf();
+        $commandSet->pdf(false);
+        $this->assertEquals(
+            array(),
+            $commandSet->toArray()
+        );
+    }
+
+    public function testPdfIsAddedInLastPlaceRegardlessOfCallOrder()
+    {
+        $commandSetWithPdfCalledLast = new CommandSet();
+        $commandSetWithPdfCalledLast->metadataOnly(true);
+        $commandSetWithPdfCalledLast->pdf();
+        $this->assertEquals(
+            array('meta', 'pdf'),
+            $commandSetWithPdfCalledLast->toArray()
+        );
+
+        $commandSetWithPdfCalledFirst = new CommandSet();
+        $commandSetWithPdfCalledFirst->pdf();
+        $commandSetWithPdfCalledFirst->metadataOnly(true);
+        $this->assertEquals(
+            array('meta', 'pdf'),
+            $commandSetWithPdfCalledFirst->toArray()
+        );
+    }
 }
