@@ -1,7 +1,7 @@
 {
-    "name": "webfactory/phumbor",
+    "name": "yncki/phumbor",
     "description": "A minimal Thumbor library for PHP",
-    "homepage": "https://github.com/webfactory/phumbor",
+    "homepage": "https://github.com/yncki/phumbor",
     "keywords": [
         "php", "thumbor", "thumbnails", "webfactory"
     ],
